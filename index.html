@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายการคำสั่งซื้อ - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-name">คำสั่งซื้อ</p>
+      <p class="site-sub">สำนักพิมพ์อมตะ - ระบบติดตามคำสั่งซื้อหนังสือจากร้านค้า</p>
+      <nav class="main-nav">
+        <a href="index.html" class="active">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>รายการคำสั่งซื้อ</h1>
+    <p class="page-desc">ดูคำสั่งซื้อทั้งหมด และติดตามสถานะการจัดส่ง</p>
+    <div class="card">
+      <div class="toolbar">
+        <div class="search-box">
+          <label for="search">ค้นหา</label>
+          <input type="search" id="search" placeholder="พิมพ์ชื่อร้านหรือชื่อหนังสือ" autocomplete="off">
+        </div>
+        <div class="filter-group" role="group" aria-label="กรองตามสถานะ">
+          <button type="button" class="filter-btn active" data-status="">ทั้งหมด</button>
+          <button type="button" class="filter-btn" data-status="รอส่ง">รอส่ง</button>
+          <button type="button" class="filter-btn" data-status="ส่งแล้ว">ส่งแล้ว</button>
+          <button type="button" class="filter-btn" data-status="ชำระแล้ว">ชำระแล้ว</button>
+        </div>
+      </div>
+      <p class="table-count" id="orders-count"></p>
+      <p class="form-error" id="orders-message" role="alert"></p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>เลขที่</th>
+              <th>ร้าน</th>
+              <th>หนังสือ</th>
+              <th class="num">จำนวน</th>
+              <th class="num">ยอดเงิน</th>
+              <th>วันที่สั่ง</th>
+              <th>สถานะ</th>
+              <th>เปลี่ยนสถานะ</th>
+            </tr>
+          </thead>
+          <tbody id="orders-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ - ข้อมูลในระบบนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สรุปยอด - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-name">คำสั่งซื้อ</p>
+      <p class="site-sub">สำนักพิมพ์อมตะ - ระบบติดตามคำสั่งซื้อหนังสือจากร้านค้า</p>
+      <nav class="main-nav">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html" class="active">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>สรุปยอด</h1>
+    <p class="page-desc">ยอดขายรวม ยอดค้างชำระ และร้านที่ยอดสั่งซื้อสูงสุด</p>
+    <div class="stat-grid stat-grid-2">
+      <div class="card stat-card">
+        <p class="stat-label">ยอดขายรวม</p>
+        <p class="stat-value" id="total-sales">-</p>
+        <p class="stat-sub" id="total-sales-sub"></p>
+      </div>
+      <div class="card stat-card stat-danger">
+        <p class="stat-label">ยอดค้างชำระรวม</p>
+        <p class="stat-value" id="total-unpaid">-</p>
+        <p class="stat-sub" id="total-unpaid-sub"></p>
+      </div>
+    </div>
+
+    <h2 class="section-title">จำนวนคำสั่งซื้อแยกตามสถานะ</h2>
+    <div class="stat-grid stat-grid-3">
+      <div class="card stat-card">
+        <p class="stat-label"><span class="badge badge-waiting">รอส่ง</span></p>
+        <p class="stat-value" id="status-count-0">-</p>
+        <p class="stat-sub" id="status-sum-0"></p>
+      </div>
+      <div class="card stat-card">
+        <p class="stat-label"><span class="badge badge-shipped">ส่งแล้ว</span></p>
+        <p class="stat-value" id="status-count-1">-</p>
+        <p class="stat-sub" id="status-sum-1"></p>
+      </div>
+      <div class="card stat-card">
+        <p class="stat-label"><span class="badge badge-paid">ชำระแล้ว</span></p>
+        <p class="stat-value" id="status-count-2">-</p>
+        <p class="stat-sub" id="status-sum-2"></p>
+      </div>
+    </div>
+
+    <h2 class="section-title">ร้านที่ยอดสั่งซื้อสูงสุด 5 อันดับ</h2>
+    <div class="card">
+      <div id="shop-chart"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ - ข้อมูลในระบบนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="summary.js"></script>
+</body>
+</html>

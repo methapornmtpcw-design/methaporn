@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เพิ่มคำสั่งซื้อ - สำนักพิมพ์อมตะ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-name">คำสั่งซื้อ</p>
+      <p class="site-sub">สำนักพิมพ์อมตะ - ระบบติดตามคำสั่งซื้อหนังสือจากร้านค้า</p>
+      <nav class="main-nav">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html" class="active">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>เพิ่มคำสั่งซื้อ</h1>
+    <p class="page-desc">บันทึกคำสั่งซื้อใหม่จากร้านค้า</p>
+    <div class="card form-card">
+      <form id="order-form" novalidate>
+        <div class="field">
+          <label for="shop">ร้าน</label>
+          <select id="shop">
+            <option value="">-- เลือกร้าน --</option>
+          </select>
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field">
+          <label for="book">หนังสือ</label>
+          <select id="book">
+            <option value="">-- เลือกหนังสือ --</option>
+          </select>
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field">
+          <label for="qty">จำนวน (เล่ม)</label>
+          <input type="text" id="qty" inputmode="numeric" autocomplete="off">
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field">
+          <label for="orderDate">วันที่สั่ง</label>
+          <input type="date" id="orderDate">
+          <p class="hint" id="date-hint"></p>
+          <p class="error-text"></p>
+        </div>
+
+        <div class="total-box">
+          <div class="total-row">
+            <span>ราคาต่อเล่ม</span>
+            <span id="price-text">-</span>
+          </div>
+          <div class="total-row total-main">
+            <span>ยอดเงินรวม</span>
+            <span id="total-text">-</span>
+          </div>
+        </div>
+
+        <p class="hint">คำสั่งซื้อใหม่จะเริ่มที่สถานะ "รอส่ง"</p>
+        <p class="form-error" id="form-error" role="alert"></p>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">บันทึกคำสั่งซื้อ</button>
+          <a href="index.html" class="btn">ยกเลิก</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">สำนักพิมพ์อมตะ - ข้อมูลในระบบนี้เป็นข้อมูลสมมติ</footer>
+
+  <script src="data.js"></script>
+  <script src="add.js"></script>
+</body>
+</html>
